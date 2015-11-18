@@ -35,9 +35,13 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'ap/vim-css-color'
 Plugin 'miripiruni/CSScomb-for-Vim'
 
+" Tagbar
+Plugin 'majutsushi/tagbar'
+Plugin 'vim-php/tagbar-phpctags.vim'
+
 "Color Schemes
 " Plugin 'vim-scripts/wombat256.vim'
-" Plugin 'altercation/vim-colors-solarized'
+Plugin 'altercation/vim-colors-solarized'
 
 call vundle#end()            " required
 " }}}
@@ -45,6 +49,10 @@ call vundle#end()            " required
 " Plugin Settings {{{
 let g:windowswap_map_keys = 0 "prevent default bindings
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+
+" PHP Tagbar
+let g:tagbar_phpctags_bin='~/.bin/phpctags'
+let g:tagbar_phpctags_memory_limit = '512M'
 " }}}
 
 " Airline {{{
@@ -176,6 +184,9 @@ vnoremap < <<CR>gv
 map <Space>w <Plug>CamelCaseMotion_w
 map <Space>b <Plug>CamelCaseMotion_b
 map <Space>e <Plug>CamelCaseMotion_e
+
+" Tagbar
+nmap <F8> :TagbarToggle<CR>
 " }}}
 
-" colorscheme wombat256mod
+colorscheme solarized
